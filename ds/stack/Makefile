@@ -7,12 +7,13 @@ CFLAGS = -Wall -Wextra -Wformat=2 -g -Wimplicit-fallthrough -Wconversion
 BLD = ./build
 
 
-
+# to build the library file for stack
+build: $(BLD)/libstack.a
 
 # to test the stack implementation
 test: $(BLD)/libstack.a $(BLD)/tstack
-testrun: test test_run
-
+testrun: test
+	./$(BLD)/tstack
 
 
 # compile stack source to object file
@@ -27,9 +28,6 @@ $(BLD)/libstack.a: $(BLD)/stack.o
 # compile test_stack.c and link it will libstack library
 $(BLD)/tstack: tests/test_stack.c stack.h
 	gcc $(CFLAGS) $< -I . -l stack -L $(BLD) -o $@
-
-test_run: $(BLD)/tstack
-	./$(BLD)/tstack
 
 
 clean:
