@@ -13,7 +13,7 @@ build: $(BLD)/libstack.a
 # to test the stack implementation
 test: $(BLD)/libstack.a $(BLD)/tstack
 testrun: test
-	./$(BLD)/tstack
+	$(BLD)/tstack
 
 
 # compile stack source to object file

@@ -1,6 +1,8 @@
 #include "stack.h"
 
-/* LOGIC:
+/* VERIFY IF THE EXPRESSION IS VALID
+ * ================================= 
+ * LOGIC:
  *  - go through the expression and push in to stack if it is a opening parentheses
  *  - if its closing parentheses, then pop the last element and
  *      check if it's matching opening parentheses, if not return false
